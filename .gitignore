@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
+.Python
 *.egg
 *.egg-info/
 dist/
@@ -15,6 +16,7 @@ build/
 .venv/
 venv/
 env/
+.uv/
 
 # uv
 uv.lock
@@ -33,6 +35,13 @@ wandb/
 # Data (raw and processed)
 data/raw/
 data/processed/
+data/cache/
+models/
+artifacts/
+*.parquet
+*.arrow
+*.sqlite
+*.db
 
 # Jupyter
 .ipynb_checkpoints/
@@ -41,13 +50,24 @@ data/processed/
 # Secrets and credentials
 .env
 .env.*
+!.env.example
 *.key
 *.pem
+*.p12
+*.pfx
+*.kdbx
 secrets/
+credentials/
+gcloud/
+*service-account*.json
+*service_account*.json
 *_token*
 *_secret*
 hf_*
 wandb_*
+.modal.toml
+.netrc
+.wandb/
 
 # IDE
 .vscode/
@@ -55,6 +75,7 @@ wandb_*
 *.swp
 *.swo
 .DS_Store
+Thumbs.db
 
 # Pre-commit
 .pre-commit-cache/
@@ -64,5 +85,7 @@ wandb_*
 
 # Test artifacts
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .coverage
 htmlcov/
