@@ -1,0 +1,58 @@
+[project]
+name = "newsignal"
+version = "0.1.0"
+description = "News-to-signal extraction with DistilBERT baseline and Qwen 2.5 7B QLoRA"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.9.0",
+    "transformers>=4.45.0",
+    "datasets>=3.0.0",
+    "peft>=0.13.0",
+    "trl>=0.11.0",
+    "accelerate>=1.0.0",
+    "bitsandbytes>=0.44.0",
+    "gradio>=5.0.0",
+    "pandas>=2.2.0",
+    "polars>=1.0.0",
+    "wandb>=0.18.0",
+    "huggingface-hub>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.7.0",
+    "pytest>=8.0.0",
+    "pre-commit>=4.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/newsignal"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gpu: requires CUDA GPU (deselect with -m 'not gpu')"]

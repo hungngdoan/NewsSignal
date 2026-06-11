@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.uv/
+
+# uv
+uv.lock
+
+# ML artifacts
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+checkpoints/
+runs/
+outputs/
+wandb/
+
+# Data (raw and processed)
+data/raw/
+data/processed/
+data/cache/
+models/
+artifacts/
+*.parquet
+*.arrow
+*.sqlite
+*.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.kdbx
+secrets/
+credentials/
+gcloud/
+*service-account*.json
+*service_account*.json
+*_token*
+*_secret*
+hf_*
+wandb_*
+.modal.toml
+.netrc
+.wandb/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Pre-commit
+.pre-commit-cache/
+
+# HuggingFace cache
+~/.cache/huggingface/
+
+# Test artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
